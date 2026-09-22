@@ -1292,10 +1292,8 @@ p {
     border-bottom: 1px solid var(--line);
 
     background:
-        linear-gradient(
-            rgba(233, 228, 218, 0.92),
-            rgba(233, 228, 218, 0.92)
-        ),
+        linear-gradient(rgba(233, 228, 218, 0.92),
+            rgba(233, 228, 218, 0.92)),
         url("assets/proces.webp") center / cover no-repeat;
 }
 
@@ -1521,6 +1519,167 @@ p {
     line-height: 1.5;
 }
 
+/* ===== REALIZATIONS INTRO ===== */
+
+.realizations-intro {
+    padding-bottom: 65px;
+}
+
+.realizations-intro__inner {
+    max-width: 720px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.realizations-intro__inner h2 {
+    margin-bottom: 0;
+
+    text-transform: uppercase;
+}
+
+.realizations-intro__inner .accent-line {
+    margin-inline: auto;
+}
+
+.realizations-intro__inner>p:last-child {
+    max-width: 620px;
+
+    margin-inline: auto;
+    margin-bottom: 0;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* ===== REALIZATIONS GALLERY ===== */
+
+.realizations-gallery {
+    padding-bottom: var(--section-space);
+}
+
+.realizations-grid {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+    grid-auto-rows: 70px;
+
+    gap: 14px;
+}
+
+
+/* ===== GALLERY ITEM ===== */
+
+.realization-item {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background: var(--cream-dark);
+}
+
+.realization-item--wide {
+    grid-column: span 8;
+    grid-row: span 5;
+}
+
+.realization-item--portrait {
+    grid-column: span 4;
+    grid-row: span 6;
+}
+
+.realization-item--tall {
+    grid-column: span 4;
+    grid-row: span 7;
+}
+
+.realization-item--large {
+    grid-column: span 8;
+    grid-row: span 7;
+}
+
+.realization-item--landscape {
+    grid-column: span 8;
+    grid-row: span 4;
+}
+
+/* ===== GALLERY IMAGES ===== */
+
+.realization-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 600ms ease,
+        filter 600ms ease;
+}
+
+.realization-item:hover img {
+    transform: scale(1.025);
+}
+
+
+/* ===== INDIVIDUAL COMPOSITION ===== */
+
+.realization-item:nth-child(3) {
+    margin-top: 35px;
+}
+
+.realization-item:nth-child(6) {
+    margin-bottom: 30px;
+}
+
+.realization-item:nth-child(8) {
+    margin-top: 25px;
+}
+
+.realization-item:nth-child(11) {
+    margin-top: 40px;
+}
+
+
+/* ===== REALIZATIONS CTA ===== */
+
+.realizations-cta {
+    border-top: 1px solid var(--line);
+}
+
+.realizations-cta__inner {
+    max-width: 700px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.realizations-cta__inner h2 {
+    margin-bottom: 0;
+
+    text-transform: uppercase;
+}
+
+.realizations-cta__inner .accent-line {
+    margin-inline: auto;
+}
+
+.realizations-cta__inner>p:last-of-type {
+    max-width: 520px;
+
+    margin-inline: auto;
+    margin-bottom: 28px;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
 
 /* =========================================================
    TABLET
@@ -1578,6 +1737,50 @@ p {
     .contact-map,
     .contact-map iframe {
         min-height: 430px;
+    }
+
+    .realizations-grid {
+        grid-template-columns: repeat(8, 1fr);
+
+        grid-auto-rows: 65px;
+
+        gap: 12px;
+    }
+
+
+    .realization-item {
+        grid-column: span 4;
+        grid-row: span 4;
+    }
+
+
+    .realization-item--wide {
+        grid-column: span 8;
+        grid-row: span 5;
+    }
+
+
+    .realization-item--portrait {
+        grid-column: span 4;
+        grid-row: span 6;
+    }
+
+
+    .realization-item--tall {
+        grid-column: span 4;
+        grid-row: span 7;
+    }
+
+
+    .realization-item--large {
+        grid-column: span 8;
+        grid-row: span 6;
+    }
+
+
+    .realization-item--landscape {
+        grid-column: span 8;
+        grid-row: span 4;
     }
 }
 
@@ -1927,6 +2130,45 @@ p {
     .footer-contact {
         align-items: center;
     }
+
+    .realizations-intro {
+        padding-bottom: 45px;
+    }
+
+
+    .realizations-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-auto-rows: 150px;
+
+        gap: 8px;
+    }
+
+    .realization-item,
+    .realization-item--portrait,
+    .realization-item--tall {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+
+    .realization-item--wide,
+    .realization-item--large,
+    .realization-item--landscape {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .realization-item:nth-child(3),
+    .realization-item:nth-child(6),
+    .realization-item:nth-child(8),
+    .realization-item:nth-child(11) {
+        margin: 0;
+    }
+
+    .realizations-cta__inner {
+        max-width: none;
+    }
 }
 
 
@@ -2001,5 +2243,32 @@ p {
 
     .company-data__row span {
         font-size: 10px;
+    }
+
+    .realizations-grid {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: auto;
+
+        gap: 10px;
+    }
+
+
+    .realization-item,
+    .realization-item--wide,
+    .realization-item--portrait,
+    .realization-item--tall,
+    .realization-item--large,
+    .realization-item--landscape {
+        grid-column: auto;
+        grid-row: auto;
+
+        height: 280px;
+    }
+
+    .realization-item:nth-child(2),
+    .realization-item:nth-child(5),
+    .realization-item:nth-child(9) {
+        height: 380px;
     }
 }
