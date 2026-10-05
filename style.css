@@ -1820,6 +1820,7 @@ body.lightbox-open {
    MOBILE
    ========================================================= */
 @media (max-width: 760px) {
+
     .section-inner,
     .site-header__inner,
     .hero {
@@ -2010,11 +2011,6 @@ body.lightbox-open {
         flex-direction: column;
     }
 
-    /* ===== GALLERY ===== */
-    .featured-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
     /* ===== PAGE HERO ===== */
     .page-hero,
     .page-hero__content {
@@ -2092,14 +2088,27 @@ body.lightbox-open {
         align-items: center;
     }
 
+    /* ===== MINIGALLERY/GALLERY ===== */
+    .featured-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .realizations-intro {
         padding-bottom: 45px;
     }
 
     .realizations-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-flow: row;
         grid-auto-rows: 145px;
         gap: 7px;
+    }
+
+    .realization-item,
+    .realization-item:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+        height: auto;
     }
 
     .realization-item {
@@ -2113,6 +2122,7 @@ body.lightbox-open {
     }
 
     .realization-item:nth-child(7n + 3) {
+        grid-column: span 1;
         grid-row: span 3;
     }
 
@@ -2143,6 +2153,7 @@ body.lightbox-open {
    SMALL MOBILE
    ========================================================= */
 @media (max-width: 480px) {
+
     .services-grid,
     .featured-grid {
         grid-template-columns: 1fr;
